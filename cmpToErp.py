@@ -34,7 +34,7 @@ def getErpPatch(cmpFaces):
     for i, face in enumerate(cmpFaces):
         facesB[:, :, stackedImages[i]] = face[:, :, 0]
         facesG[:, :, stackedImages[i]] = face[:, :, 1]
-        facesR[:, :, stackedImages[i]] = face[:, :, 1]
+        facesR[:, :, stackedImages[i]] = face[:, :, 2]
 
     X, Y = np.meshgrid(np.linspace(0, width, width, endpoint=False),
                        np.linspace(0, height, height, endpoint=False))
@@ -153,3 +153,35 @@ def getErpPatch(cmpFaces):
                           normalizedCoords[:, :, 0], getFace.astype(np.int32)]
 
     return out
+
+
+if __name__ == '__main__':
+    import cv2
+    from matplotlib import pyplot as plt
+
+    patchName = 'patch_1'
+    cmpFaces = np.ndarray((6, 1250, 1250, 3), dtype=np.uint8)
+
+    for i in range(6):
+        cmpFaces[i] = cv2.imread(f'./faces/{patchName}_face_{i+1}.jpg',
+                                 cv2.IMREAD_COLOR)
+
+    erpPatch = getErpPatch(cmpFaces).astype(np.uint8)
+
+    faces = ['front', 'right', 'back', 'left', 'top', 'bottom']
+
+    plt.figure(num='CubeMap Faces', figsize=(15, 15))
+    for i, cmpFace in enumerate(cmpFaces):
+        cmpFace = cv2.cvtColor(cmpFace, cv2.COLOR_BGR2RGB)
+        plt.subplot(2, 3, i+1)
+        plt.axis('off')
+        plt.imshow(cmpFace)
+        plt.title(f'{faces[i]} face')
+    plt.show()
+
+    plt.figure(num='Resulted EquiRectangular Projected Image', figsize=(15, 15))
+    plt.axis('off')
+    erpPatch = cv2.cvtColor(erpPatch, cv2.COLOR_BGR2RGB)
+    plt.imshow(erpPatch)
+    plt.title('Resulted EquiRectangular Projected Image')
+    plt.show()

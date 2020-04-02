@@ -85,3 +85,26 @@ def eqToPers(eqimg, fov, u, v, outH, outW):
 
     output = np.stack([mc0, mc1, mc2], axis=-1)
     return output
+
+
+if __name__ == '__main__':
+    import cv2
+    from matplotlib import image as mpimg, pyplot as plt
+
+    patchName = 'patch_1'
+
+    erpPatch = cv2.imread(f'./patches/{patchName}.jpg', cv2.IMREAD_COLOR)
+
+    cmpFaces = getCmpFaces(erpPatch).astype(np.uint8)
+
+    faces = ['front', 'right', 'back', 'left', 'top', 'bottom']
+
+    plt.figure(num="Resulted CubeMap Faces", figsize=(15, 15))
+    for i, cmpFace in enumerate(cmpFaces):
+        cmpFace = cv2.cvtColor(cmpFace, cv2.COLOR_BGR2RGB)
+        plt.subplot(2, 3, i+1)
+        plt.axis('off')
+        plt.imshow(cmpFace)
+        plt.title(f'{faces[i]} face')
+        mpimg.imsave(f'./faces/{patchName}_face_{i+1}.jpg', cmpFace)
+    plt.show()
