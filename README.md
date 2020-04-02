@@ -1,8 +1,8 @@
-# IbraDje
+# ERP-CMP
 EquiRectangular - CubeMap Projections
 
 <hr>
-<h1>cmpToErp : getErpPatch(campFaces)</h1>
+<h1>cmpToErp :</h1> getErpPatch(campFaces)
 <h3>CubeMap Projection to EquiRectangular Projection</h3>
   <b>Parameters:</b>
   <ul>
@@ -15,7 +15,7 @@ EquiRectangular - CubeMap Projections
   </ul>
 
 <hr>
-<h1>erpToCmp : getCmpFaces(erpPatch, H=None, W=None)</h1>
+<h1>erpToCmp :</h1> getCmpFaces(erpPatch, H=None, W=None)
 <h3>EquiRectangular Projection to CubeMap Projection Function</h3>
   <b>Parameters:</b>
   <ul>
