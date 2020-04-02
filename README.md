@@ -1,0 +1,2 @@
+# IbraDje
+EquiRectangular - CubeMap Projections
