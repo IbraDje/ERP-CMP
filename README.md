@@ -20,8 +20,8 @@ EquiRectangular - CubeMap Projections
   <b>Parameters:</b>
   <ul>
       <li><code><var>erpPatch</var></code> : Equirectangular Projected Image (OpenCV BGR Format)</li>
-      <li><code><var>H</var></code> : Height of CMP Faces (default : <code><var>patch.shape[0] // 2</var></code>)</li>
-      <li><code><var>W</var></code> : Width of CMP Faces (default : <code><var>patch.shape[1] // 4</var></code>)</b></li>
+      <li><code><var>H</var></code> : Height of CMP Faces (default : <code><var>erpPatch.shape[0] // 2</var></code>)</li>
+      <li><code><var>W</var></code> : Width of CMP Faces (default : <code><var>erpPatch.shape[1] // 4</var></code>)</b></li>
   </ul>
   <b>Returns:</b>
   <ul>
