@@ -8,7 +8,7 @@ EquiRectangular - CubeMap Projections
   <ul>
   <li><code><var>cmpFaces</var></code> : CubeMap Projected Faces (OpenCV BGR Format):
       front, right, back, left, top, bottom
-      with shape : [6, H, W, 3]</li></ul>
+      with shape : <code><var>[6, H, W, 3]</var></code></li></ul>
   <b>Returns:</b><ul>
       <li><code><var>erpPatch</var></code> : Equirectangular Projected Image
       with shape : <code><var>[H, W*2, 3]</var></code></li>
