@@ -2,15 +2,15 @@
 EquiRectangular - CubeMap Projections
 
 <hr>
-<h1>cmpToErp :</h1> getErpPatch(campFaces)
+<h1>cmpToErp :</h1> `getErpPatch(campFaces)`
 <h3>CubeMap Projection to EquiRectangular Projection</h3>
   <b>Parameters:</b>
   <ul>
-      <li><b>cmpFaces :</b> CubeMap Projected Faces (OpenCV BGR Format):
+      <li>`cmpFaces` : CubeMap Projected Faces (OpenCV BGR Format):
       front, right, back, left, top, bottom
       with shape : [6, H, W, 3]</li></ul>
   <b>Returns:</b><ul>
-      <li><b>erpPatch :</b> Equirectangular Projected Image
+      <li>`erpPatch` : Equirectangular Projected Image
       with shape : [H, W*2, 3]</li>
   </ul>
 
